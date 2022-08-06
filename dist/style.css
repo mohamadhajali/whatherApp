@@ -1,0 +1,54 @@
+#continar {
+  width: 500px;
+  height: 500px;
+}
+body {
+}
+#search {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+input {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid white;
+  float: left;
+  width: 80%;
+  background-color: blue;
+}
+input::placeholder {
+  color: white;
+}
+input:focus,
+input:focus {
+  color: white;
+}
+#continar2 {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  box-shadow: 1px 1px 3px black;
+}
+#cityWeather {
+  position: relative;
+  border: 2px solid blue;
+  background-color: blue;
+  border-radius: 12px;
+  padding: 5px;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 1vw;
+  text-align: center;
+}
+i:hover {
+  font-size: x-large;
+  color: green;
+}

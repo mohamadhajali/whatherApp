@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+  <script src="./jquery/dist/jquery.js"></script>
+</head>
+<body style="display: inline-block">
+  <div id="continar">
+    <input id="cityName" type="text" placeholder="Name of City" />
+    <button id="search" onclick="handleSearch()">
+      <i class="fa fa-search"></i>
+    </button>
+    <script id="first-templet" type="text/x-handlebars-template">
+      {{#each data}}
+        <div id="continar2" style="display: inline-flex">
+          <div>
+            <button
+              id="toSaveOrdelete"
+              onclick="oparitonInIdDB(this)"
+            >save</button>
+          </div>
+          <div style="  text-align: left;display: inline-block">
+            <h1 id="temp">{{temperature}}&#176;</h1>
+            <h3 id="name">{{name}}</h3>
+          </div>
+          <div style="  text-align: right ;display: inline-block">
+            <img src="{{conditionPic}}" style="font-size:24px;" />
+            <h3 id="condition">{{condition}}</h3>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+    <div id="cityWeather" style="display: inline-block"></div>
+  </div>
+</body>
+<script src="Renderer.js"></script>
+<script src="model.js"></script>
+
+<script src="main.js"></script>

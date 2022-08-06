@@ -30,7 +30,6 @@ router.get("/cities", (req, res) => {
 
 router.post("/save", (req, res) => {
   let data = req.body;
-  console.log(data);
   let city = new City(data);
   city.save();
 });

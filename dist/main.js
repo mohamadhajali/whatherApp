@@ -6,6 +6,6 @@ loadPage();
 handleSearch = function () {
   c.getCityData();
 };
-oparitonInIdDB = function (i) {
-  c.saveCityInDB(i);
+oparitonInIdDB = function (buttonAction) {
+  c.saveCityInDB(buttonAction);
 };

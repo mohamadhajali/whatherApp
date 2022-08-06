@@ -1,4 +1,4 @@
-const re = new Renderer($("#first-templet"), $("#cityWeather"));
+const render = new Renderer($("#first-templet"), $("#cityWeather"));
 
 const model = class {
   getCityData = function () {
@@ -12,28 +12,25 @@ const model = class {
         return;
       },
       success: function (response) {
-        re.renderInfo(response);
+        render.renderInfo(response);
       },
     });
-    // $.get(`/city/${city}`, function (err, response) {
-    //
-    // });
   };
   getDataFromDB = function () {
     $.get("/cities", function (response) {
-      re.renderInfo(response);
+      render.renderInfo(response);
     });
   };
 
-  saveCityInDB = function (i) {
-    let div = $(i).closest("#continar2");
+  saveCityInDB = function (buttonAction) {
+    let div = $(buttonAction).closest("#continar2");
     let nameFromDom = div.find("#name").text();
 
-    if ($(i).html() == "Delete") {
+    if ($(buttonAction).html() == "Delete") {
       this.deleteCity(div);
       return;
     }
-    $(i).html("Delete");
+    $(buttonAction).html("Delete");
     let tempFromDom = div.find("#temp").text();
     let imgFromDom = div.find("img").attr("src");
     let conditionFromDom = div.find("#condition").text();
